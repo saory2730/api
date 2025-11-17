@@ -1,0 +1,28 @@
+body {
+    font-family: Arial;
+    margin: 40px;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.form {
+    margin-bottom: 20px;
+}

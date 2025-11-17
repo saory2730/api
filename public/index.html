@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario - API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Inventario de Productos</h1>
+
+    <section class="form">
+        <h2>Agregar Producto</h2>
+        <input id="nombre" type="text" placeholder="Nombre">
+        <input id="precio" type="number" placeholder="Precio">
+        <button onclick="crearProducto()">Guardar</button>
+    </section>
+
+    <section>
+        <h2>Lista de Productos</h2>
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
