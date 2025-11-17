@@ -1,21 +1,19 @@
-const express = require("express");
-const cors = require("cors");
-const routes = require("./routes");
-
+const express = require('express');
+const path = require('path');
 const app = express();
-const port = 3000;
 
-// Middlewares
-app.use(cors());
+// Middleware para leer JSON del frontend
 app.use(express.json());
 
-// Rutas
-app.use("/api", routes);
+// Servir la carpeta public
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("/", (req, res) => {
-    res.send("API funcionando correctamente 👌");
+// Página principal
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
