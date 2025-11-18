@@ -40,8 +40,7 @@ async function eliminarProducto(id) {
     cargarProductos();
 }
 
-// === NUEVO ===
-// Rellenar formulario
+
 function llenarFormulario(id, nombre, precio) {
     document.getElementById("nombre").value = nombre;
     document.getElementById("precio").value = precio;
@@ -52,8 +51,7 @@ function llenarFormulario(id, nombre, precio) {
     btn.onclick = () => actualizarProducto(id);
 }
 
-// === NUEVO ===
-// PUT - Actualizar
+
 async function actualizarProducto(id) {
     const nombre = document.getElementById("nombre").value;
     const precio = document.getElementById("precio").value;
