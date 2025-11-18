@@ -2,18 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
-const routes = require('./routes'); // <- AQUÍ CONECTAS LA API
+const routes = require('./routes'); 
 
 const app = express();
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// API
 app.use('/api', routes);
 
-// Frontend
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {

@@ -1,10 +1,11 @@
 body {
     font-family: Arial;
     margin: 40px;
+    background-color: #FCE6E6;
 }
 
-h1 {
-    color: #333;
+h1, h2 {
+    color: #4A4A4A;
 }
 
 table {
@@ -15,14 +16,32 @@ table {
 
 td, th {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #E0B8B8;
+    background-color: #F8DCDC; 
 }
 
 button {
     padding: 5px 10px;
     cursor: pointer;
+    width: 90px;
+    height: 30px;
 }
-
+#nombre, #precio {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: #E0B8B8 solid 1px;
+    background-color: #FFFFFF;
+}
 .form {
     margin-bottom: 20px;
+}
+
+button {
+
+    background-color: #C95252;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    border: #E0B8B8 solid 1px;
 }
