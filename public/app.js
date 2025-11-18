@@ -15,6 +15,7 @@ async function cargarProductos() {
                 <td>${p.precio}</td>
                 <td>
                     <button onclick="eliminarProducto(${p.id})">Eliminar</button>
+                    <button onclick="llenarFormulario(${p.id}, '${p.nombre}', ${p.precio})">Editar</button>
                 </td>
             </tr>
         `;
@@ -36,6 +37,40 @@ async function crearProducto() {
 
 async function eliminarProducto(id) {
     await fetch(`${API}/${id}`, { method: "DELETE" });
+    cargarProductos();
+}
+
+// === NUEVO ===
+// Rellenar formulario
+function llenarFormulario(id, nombre, precio) {
+    document.getElementById("nombre").value = nombre;
+    document.getElementById("precio").value = precio;
+
+    const btn = document.querySelector(".form button");
+    btn.textContent = "Actualizar";
+
+    btn.onclick = () => actualizarProducto(id);
+}
+
+// === NUEVO ===
+// PUT - Actualizar
+async function actualizarProducto(id) {
+    const nombre = document.getElementById("nombre").value;
+    const precio = document.getElementById("precio").value;
+
+    await fetch(`${API}/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, precio })
+    });
+
+    const btn = document.querySelector(".form button");
+    btn.textContent = "Guardar";
+    btn.onclick = crearProducto;
+
+    document.getElementById("nombre").value = "";
+    document.getElementById("precio").value = "";
+
     cargarProductos();
 }
 
